@@ -4,10 +4,15 @@
  */
 
 // Detectar ambiente automáticamente
-const API_URL = window.location.hostname === 'localhost' 
-  ? 'http://localhost:3000/usuarios'
-  : 'https://api-usuarios-backend.herokuapp.com/usuarios'; // Cambiar por tu URL de producción
+const getAPIURL = () => {
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    return 'http://localhost:3000/usuarios';
+  }
+  // En producción (Netlify), cambiar por tu URL de backend
+  return 'https://tu-backend-heroku.herokuapp.com/usuarios';
+};
 
+const API_URL = getAPIURL();
 const TIMEOUT = 5000; // 5 segundos
 
 /**

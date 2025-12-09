@@ -3,7 +3,11 @@
  * Maneja todas las llamadas HTTP a la API
  */
 
-const API_URL = 'http://localhost:3000/usuarios';
+// Detectar ambiente automáticamente
+const API_URL = window.location.hostname === 'localhost' 
+  ? 'http://localhost:3000/usuarios'
+  : 'https://api-usuarios-backend.herokuapp.com/usuarios'; // Cambiar por tu URL de producción
+
 const TIMEOUT = 5000; // 5 segundos
 
 /**

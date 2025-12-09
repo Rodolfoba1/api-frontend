@@ -5,12 +5,14 @@
 
 // Detectar ambiente automáticamente
 const getAPIURL = () => {
-  // En desarrollo local
-  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+  // En desarrollo local SOLO si accedes desde la misma máquina
+  if ((window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') 
+      && window.location.protocol === 'file:') {
     return 'http://localhost:3000/usuarios';
   }
   
-  // En producción (Vercel)
+  // Si está en localhost pero desde red, o en cualquier otro sitio: Vercel
+  // En producción (Vercel) o acceso remoto
   return 'https://api-backend-jk2caxryu-rodolfoba1s-projects.vercel.app/api/usuarios';
 };
 

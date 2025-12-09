@@ -1,8 +1,8 @@
 // Configuración de la API
-const API_URL = 'http://localhost:3000/usuarios';
+const API_URL = 'https://api-backend-jk2caxryu-rodolfoba1s-projects.vercel.app';
 
 // Estado de la aplicación
-let usuarioEnEdicion = null;
+let usuarioEnEdicion = null;git 
 let usuarioParaEliminar = null;
 
 // Elementos del DOM

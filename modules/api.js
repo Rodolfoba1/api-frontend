@@ -11,8 +11,7 @@ const getAPIURL = () => {
   }
   
   // En producción (Vercel)
-  // Variable de entorno de Vercel o URL hardcodeada
-  return import.meta.env.VITE_API_URL || 'https://api-backend.vercel.app/api/usuarios';
+  return 'https://api-backend-jk2caxryu-rodolfoba1s-projects.vercel.app/api/usuarios';
 };
 
 const API_URL = getAPIURL();

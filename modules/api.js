@@ -5,11 +5,14 @@
 
 // Detectar ambiente automáticamente
 const getAPIURL = () => {
+  // En desarrollo local
   if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
     return 'http://localhost:3000/usuarios';
   }
-  // En producción (Netlify), cambiar por tu URL de backend
-  return 'https://tu-backend-heroku.herokuapp.com/usuarios';
+  
+  // En producción (Vercel)
+  // Variable de entorno de Vercel o URL hardcodeada
+  return import.meta.env.VITE_API_URL || 'https://api-backend.vercel.app/api/usuarios';
 };
 
 const API_URL = getAPIURL();
